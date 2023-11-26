@@ -21,7 +21,6 @@ func Connect() (*mongo.Client, error) {
 		return nil, err
 	}
 
-	// Testa a conexão com o MongoDB
 	err = client.Ping(context.TODO(), nil)
 	if err != nil {
 		return nil, err

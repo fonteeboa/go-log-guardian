@@ -29,7 +29,6 @@ func Connect() (*gorm.DB, error) {
 		return nil, err
 	}
 
-	// Testa a conexão com o banco de dados
 	sqlDB, err := db.DB()
 	if err != nil {
 		return nil, err

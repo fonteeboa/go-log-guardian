@@ -2,10 +2,10 @@ package domain
 
 import "time"
 
-// Priority representa o nível de severidade para os logs
+// Priority represents the severity level for the logs
 type Priority int
 
-// Níveis de severidade baseados no syslog.h
+// Severity levels based on syslog.h
 const (
 	LOG_EMERG   Priority = iota // 0
 	LOG_ALERT                   // 1
@@ -17,7 +17,7 @@ const (
 	LOG_DEBUG                   // 7
 )
 
-// Mapa para converter Priority para string
+// Map to convert Priority to string
 var PriorityToString = map[Priority]string{
 	LOG_EMERG:   "LOG_EMERG",
 	LOG_ALERT:   "LOG_ALERT",
@@ -29,33 +29,33 @@ var PriorityToString = map[Priority]string{
 	LOG_DEBUG:   "LOG_DEBUG",
 }
 
-// BaseLog representa os campos comuns a todos os tipos de logs
+// BaseLog represents the common fields for all types of logs
 type BaseLog struct {
-	Priority            Priority  // Prioridade do log
-	LogLevel            string    // Nível do log (debug, info, error, etc.)
-	Timestamp           time.Time // Momento em que o log foi registrado
-	GenericErrorMessage string    // Mensagem genérica do log
-	ErrorMessage        string    // Mensagem de erro específica
+	Priority            Priority  // Log priority
+	LogLevel            string    // Log level (debug, info, error, etc.)
+	Timestamp           time.Time // Time when the log was registered
+	GenericErrorMessage string    // Generic log message
+	ErrorMessage        string    // Specific error message
 }
 
-// FunctionLog representa um registro de log relacionado a uma função específica
+// FunctionLog represents a log record related to a specific function
 type FunctionLog struct {
-	BaseLog             // Incorpora os campos de BaseLog
-	FunctionName string // Nome da função registrada
+	BaseLog             // Incorporates BaseLog fields
+	FunctionName string // Name of the registered function
 }
 
-// DatabaseLog representa um registro de log relacionado a operações de banco de dados
+// DatabaseLog represents a log record related to database operations
 type DatabaseLog struct {
-	BaseLog          // Incorpora os campos de BaseLog
-	TableName string // Nome da tabela relacionada à operação
-	Query     string // Query executada no banco de dados
+	BaseLog          // Incorporates BaseLog fields
+	TableName string // Name of the table related to the operation
+	Query     string // Query executed in the database
 }
 
-// RequestLog representa um registro de log relacionado a solicitações (requests)
+// RequestLog represents a log record related to requests
 type RequestLog struct {
-	BaseLog             // Incorpora os campos de BaseLog
-	Method       string // Método HTTP da solicitação (GET, POST, etc.)
-	StatusCode   int    // Código de status HTTP
-	Path         string // Caminho da solicitação
-	ResponseSize int    // Tamanho da resposta
+	BaseLog             // Incorporates BaseLog fields
+	Method       string // HTTP method of the request (GET, POST, etc.)
+	StatusCode   int    // HTTP status code
+	Path         string // Path of the request
+	ResponseSize int    // Response size
 }

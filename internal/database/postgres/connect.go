@@ -14,7 +14,6 @@ import (
 // It reads the environment variables from the .env file and constructs the connection string.
 // The function returns a *gorm.DB instance and an error.
 func Connect() (*gorm.DB, error) {
-	// Leitura das variáveis de ambiente do arquivo .env
 	host := os.Getenv("POSTGRES_HOST")
 	port := os.Getenv("POSTGRES_EXTERNAL_PORT")
 	user := os.Getenv("POSTGRES_USER")
@@ -25,7 +24,6 @@ func Connect() (*gorm.DB, error) {
 		host = "127.0.0.1"
 	}
 
-	// Construa a string de conexão
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
@@ -33,7 +31,6 @@ func Connect() (*gorm.DB, error) {
 		return nil, err
 	}
 
-	// Testa a conexão com o banco de dados
 	sqlDB, err := db.DB()
 	if err != nil {
 		return nil, err
