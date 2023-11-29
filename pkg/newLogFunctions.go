@@ -3,7 +3,7 @@ package pkg
 import (
 	"time"
 
-	"github.com/FonteeBoa/go-log-guardian/pkg/domain"
+	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
 // newBaseLog creates a new instance of the BaseLog struct.

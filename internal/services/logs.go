@@ -3,11 +3,11 @@ package services
 import (
 	"errors"
 
-	pkg "github.com/FonteeBoa/go-log-guardian/pkg/domain"
+	pkg "github.com/fonteeBoa/go-log-guardian/pkg/domain"
 
-	"github.com/FonteeBoa/go-log-guardian/internal/database/dbhandler"
+	"github.com/fonteeBoa/go-log-guardian/internal/database/dbhandler"
 
-	"github.com/FonteeBoa/go-log-guardian/internal/database/mongodb"
+	"github.com/fonteeBoa/go-log-guardian/internal/database/mongodb"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"gorm.io/gorm"

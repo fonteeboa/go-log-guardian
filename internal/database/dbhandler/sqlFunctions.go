@@ -1,7 +1,7 @@
 package dbhandler
 
 import (
-	pkg "github.com/FonteeBoa/go-log-guardian/pkg/domain"
+	pkg "github.com/fonteeBoa/go-log-guardian/pkg/domain"
 
 	"gorm.io/gorm"
 )

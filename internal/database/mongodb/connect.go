@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/FonteeBoa/go-log-guardian/internal/database/migrate"
+	"github.com/fonteeBoa/go-log-guardian/internal/database/migrate"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

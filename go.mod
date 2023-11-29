@@ -1,4 +1,4 @@
-module github.com/FonteeBoa/go-log-guardian
+module github.com/fonteeBoa/go-log-guardian
 
 go 1.21.3
 
