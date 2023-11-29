@@ -1,9 +1,10 @@
 package migrate
 
 import (
-	pkg "GoLogGuardian/pkg/domain"
 	"context"
 	"os"
+
+	pkg "github.com/FonteeBoa/GoLogGuardian/pkg/domain"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

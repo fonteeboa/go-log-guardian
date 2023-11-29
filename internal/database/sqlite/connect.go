@@ -1,8 +1,9 @@
 package sqlite
 
 import (
-	"GoLogGuardian/internal/database/migrate"
 	"os"
+
+	"github.com/FonteeBoa/GoLogGuardian/internal/database/migrate"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

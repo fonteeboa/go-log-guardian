@@ -1,8 +1,9 @@
 package pkg
 
 import (
-	"GoLogGuardian/pkg/domain"
 	"time"
+
+	"github.com/FonteeBoa/GoLogGuardian/pkg/domain"
 )
 
 // newBaseLog creates a new instance of the BaseLog struct.

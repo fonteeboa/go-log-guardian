@@ -1,12 +1,13 @@
 package services
 
 import (
-	pkg "GoLogGuardian/pkg/domain"
 	"errors"
 
-	"GoLogGuardian/internal/database/dbhandler"
+	pkg "github.com/FonteeBoa/GoLogGuardian/pkg/domain"
 
-	"GoLogGuardian/internal/database/mongodb"
+	"github.com/FonteeBoa/GoLogGuardian/internal/database/dbhandler"
+
+	"github.com/FonteeBoa/GoLogGuardian/internal/database/mongodb"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"gorm.io/gorm"

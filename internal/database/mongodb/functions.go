@@ -1,8 +1,9 @@
 package mongodb
 
 import (
-	pkg "GoLogGuardian/pkg/domain"
 	"context"
+
+	pkg "github.com/FonteeBoa/GoLogGuardian/pkg/domain"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )

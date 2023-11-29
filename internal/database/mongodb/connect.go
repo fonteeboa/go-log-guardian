@@ -1,9 +1,10 @@
 package mongodb
 
 import (
-	"GoLogGuardian/internal/database/migrate"
 	"context"
 	"os"
+
+	"github.com/FonteeBoa/GoLogGuardian/internal/database/migrate"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

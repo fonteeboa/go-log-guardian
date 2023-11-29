@@ -1,9 +1,10 @@
 package pkg
 
 import (
-	"GoLogGuardian/pkg/domain"
 	"fmt"
 	"os"
+
+	"github.com/FonteeBoa/GoLogGuardian/pkg/domain"
 )
 
 // checkEnvironment checks the environment and returns a boolean value.

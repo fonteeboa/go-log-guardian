@@ -1,4 +1,4 @@
-module GoLogGuardian
+module github.com/FonteeBoa/GoLogGuardian
 
 go 1.21.3
 

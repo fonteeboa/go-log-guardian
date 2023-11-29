@@ -1,9 +1,10 @@
 package postgres
 
 import (
-	"GoLogGuardian/internal/database/migrate"
 	"fmt"
 	"os"
+
+	"github.com/FonteeBoa/GoLogGuardian/internal/database/migrate"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
