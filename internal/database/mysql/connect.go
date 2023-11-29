@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/FonteeBoa/GoLogGuardian/internal/database/migrate"
+	"github.com/FonteeBoa/go-log-guardian/internal/database/migrate"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

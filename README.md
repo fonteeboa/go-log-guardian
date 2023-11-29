@@ -1,4 +1,4 @@
-# GoLogGuardian
+# go-log-guardian
 
 O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
 
@@ -60,6 +60,6 @@ LOG_GUARDIAN_DATABASE_TYPE: Especifica o tipo de banco de dados a ser utilizado 
 
 #### Observações:
 
-Para utilizar as funções automáticas do GoLogGuardian, é obrigatório o uso da variável LOG_GUARDIAN_DATABASE_TYPE, pois algumas validações são executadas com base nesta variável antes de chamar as rotinas de inserção.
+Para utilizar as funções automáticas do go-log-guardian, é obrigatório o uso da variável LOG_GUARDIAN_DATABASE_TYPE, pois algumas validações são executadas com base nesta variável antes de chamar as rotinas de inserção.
 
 Certifique-se de fornecer valores válidos e corretos para cada uma dessas variáveis de ambiente. Isso garante uma conexão adequada e o funcionamento correto do Log Guardian com o banco de dados desejado.

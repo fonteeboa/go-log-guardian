@@ -8,10 +8,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"gorm.io/gorm"
 
-	"github.com/FonteeBoa/GoLogGuardian/internal/database/mongodb"
-	"github.com/FonteeBoa/GoLogGuardian/internal/database/mysql"
-	"github.com/FonteeBoa/GoLogGuardian/internal/database/postgres"
-	"github.com/FonteeBoa/GoLogGuardian/internal/database/sqlite"
+	"github.com/FonteeBoa/go-log-guardian/internal/database/mongodb"
+	"github.com/FonteeBoa/go-log-guardian/internal/database/mysql"
+	"github.com/FonteeBoa/go-log-guardian/internal/database/postgres"
+	"github.com/FonteeBoa/go-log-guardian/internal/database/sqlite"
 )
 
 // GetConnection retrieves the database connection based on the LOG_GUARDIAN_DATABASE_TYPE environment variable.

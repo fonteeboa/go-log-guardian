@@ -1,7 +1,7 @@
 package migrate
 
 import (
-	pkg "github.com/FonteeBoa/GoLogGuardian/pkg/domain"
+	pkg "github.com/FonteeBoa/go-log-guardian/pkg/domain"
 
 	"gorm.io/gorm"
 )

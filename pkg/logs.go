@@ -1,8 +1,8 @@
 package pkg
 
 import (
-	"github.com/FonteeBoa/GoLogGuardian/internal/services"
-	"github.com/FonteeBoa/GoLogGuardian/pkg/domain"
+	"github.com/FonteeBoa/go-log-guardian/internal/services"
+	"github.com/FonteeBoa/go-log-guardian/pkg/domain"
 )
 
 // LogFunction logs the function execution and saves the log data if the environment allows it.

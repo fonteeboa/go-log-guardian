@@ -1,6 +1,6 @@
 package pkg
 
-import "github.com/FonteeBoa/GoLogGuardian/pkg/domain"
+import "github.com/FonteeBoa/go-log-guardian/pkg/domain"
 
 // function is a Go function that takes in a priority, functionName, genericErrMsg, and errMsg as parameters.
 //

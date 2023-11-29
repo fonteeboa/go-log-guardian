@@ -3,7 +3,7 @@ package sqlite
 import (
 	"os"
 
-	"github.com/FonteeBoa/GoLogGuardian/internal/database/migrate"
+	"github.com/FonteeBoa/go-log-guardian/internal/database/migrate"
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"

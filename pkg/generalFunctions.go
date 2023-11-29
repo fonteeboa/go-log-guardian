@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/FonteeBoa/GoLogGuardian/pkg/domain"
+	"github.com/FonteeBoa/go-log-guardian/pkg/domain"
 )
 
 // checkEnvironment checks the environment and returns a boolean value.

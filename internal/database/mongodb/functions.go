@@ -3,7 +3,7 @@ package mongodb
 import (
 	"context"
 
-	pkg "github.com/FonteeBoa/GoLogGuardian/pkg/domain"
+	pkg "github.com/FonteeBoa/go-log-guardian/pkg/domain"
 
 	"go.mongodb.org/mongo-driver/mongo"
 )
