@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"goLogGuardian/internal/database/migrate"
+	"GoLogGuardian/internal/database/migrate"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

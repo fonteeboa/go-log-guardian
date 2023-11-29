@@ -1,8 +1,8 @@
 package migrate
 
 import (
+	pkg "GoLogGuardian/pkg/domain"
 	"context"
-	pkg "goLogGuardian/pkg/domain"
 	"os"
 
 	"go.mongodb.org/mongo-driver/bson"

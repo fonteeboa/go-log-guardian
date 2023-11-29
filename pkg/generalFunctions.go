@@ -1,8 +1,8 @@
 package pkg
 
 import (
+	"GoLogGuardian/pkg/domain"
 	"fmt"
-	"goLogGuardian/pkg/domain"
 	"os"
 )
 

@@ -1,12 +1,12 @@
 package services
 
 import (
+	pkg "GoLogGuardian/pkg/domain"
 	"errors"
-	pkg "goLogGuardian/pkg/domain"
 
-	"goLogGuardian/internal/database/dbhandler"
+	"GoLogGuardian/internal/database/dbhandler"
 
-	"goLogGuardian/internal/database/mongodb"
+	"GoLogGuardian/internal/database/mongodb"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"gorm.io/gorm"

@@ -1,6 +1,6 @@
 package pkg
 
-import "goLogGuardian/pkg/domain"
+import "GoLogGuardian/pkg/domain"
 
 // function is a Go function that takes in a priority, functionName, genericErrMsg, and errMsg as parameters.
 //

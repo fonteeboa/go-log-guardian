@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	"goLogGuardian/pkg/domain"
+	"GoLogGuardian/pkg/domain"
 	"time"
 )
 

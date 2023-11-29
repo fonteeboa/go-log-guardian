@@ -1,8 +1,8 @@
 package mongodb
 
 import (
+	"GoLogGuardian/internal/database/migrate"
 	"context"
-	"goLogGuardian/internal/database/migrate"
 	"os"
 
 	"go.mongodb.org/mongo-driver/mongo"
