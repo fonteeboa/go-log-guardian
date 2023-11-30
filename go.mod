@@ -2,6 +2,8 @@ module github.com/fonteeBoa/go-log-guardian
 
 go 1.21.3
 
+replace github.com/fonteeBoa/go-log-guardian => github.com/fonteeBoa/go-log-guardian v1.0.0
+
 require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
