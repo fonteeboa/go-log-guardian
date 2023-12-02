@@ -1,0 +1,24 @@
+name: Go Unit Tests
+
+on:
+  push:
+    branches: [ main ] # Executar quando ocorrer push na branch main
+  pull_request:
+    branches: [ main ] # Executar quando houver pull request na branch main
+
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.21' # Usar a versão mais recente da série 1.21 do Go
+
+      - name: Run unit tests
+        run: go test -v ./... # Comando para executar os testes unitários
