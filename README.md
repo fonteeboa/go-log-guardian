@@ -6,7 +6,7 @@
 
 O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas vizando a importância da tradução para o usuário final. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
 
-## Funcionalidades
+<p align="center"> <strong>Funcionalidades</strong> </p>
 
 🔹 Padronização de Logs: O Log Guardian oferece uma estrutura unificada para diferentes tipos de logs, desde logs de função, operações em banco de dados até logs de requisições.
 
@@ -16,7 +16,8 @@ O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs d
 
 🔹 Inserção Automática de Logs: Quando configurado corretamente com variáveis de ambiente, o Log Guardian é capaz de inserir automaticamente os logs no banco de dados especificado.
 
-# Uso
+<p align="center"> <strong>Uso</strong> </p>
+
 O Log Guardian é flexível e se adapta à configuração do ambiente em que é executado. Se as variáveis de ambiente necessárias não estiverem configuradas, o Log Guardian ainda poderá retornar o modelo do log específico para inserção manual no banco de dados.
 
 Caso as variáveis de ambiente estejam configuradas corretamente com os detalhes do banco de dados desejado, o Log Guardian é capaz de conectar automaticamente ao banco de dados especificado e inserir os logs diretamente na tabela correspondente. Ele retorna um valor booleano indicando o sucesso ou falha na inserção dos dados no banco.
@@ -25,7 +26,7 @@ Essa flexibilidade permite uma fácil integração e uso do Log Guardian em dife
 
 É recomendável consultar a seção de Configuração para detalhes sobre as variáveis de ambiente necessárias para uma configuração completa do Log Guardian.
 
-## Configuração
+<p align="center"> <strong>Configuração</strong> </p>
 
 O Log Guardian utiliza variáveis de ambiente para configurar suas operações de banco, incluindo definições de conexão com banco de dados e outras configurações essenciais. Aqui está a lista das variáveis de ambiente disponíveis:
 
