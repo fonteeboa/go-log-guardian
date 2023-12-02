@@ -60,12 +60,14 @@ SQLITE_PATH: Caminho do arquivo SQLite, se for o banco de dados escolhido.
 MONGODB_URI: Define o URI de conexão para o MongoDB.
 MONGODB_DBNAME: Nome do banco de dados MongoDB a ser utilizado.
 ```
-#### Configuração Geral
+
+<h4 align="center"> <strong>Configuração Geral</strong> </h4>
+
 ```
 LOG_GUARDIAN_DATABASE_TYPE: Especifica o tipo de banco de dados a ser utilizado pelo Log Guardian (Valores: sqlite, postgres, mysql, mongodb).
 ```
 
-#### Observações:
+<h4 align="center"> <strong>Observações</strong> </h4>
 
 Para utilizar as funções automáticas do go-log-guardian, é obrigatório o uso da variável LOG_GUARDIAN_DATABASE_TYPE, pois algumas validações são executadas com base nesta variável antes de chamar as rotinas de inserção.
 
