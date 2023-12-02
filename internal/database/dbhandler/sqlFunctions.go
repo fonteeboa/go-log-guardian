@@ -6,11 +6,11 @@ import (
 	"gorm.io/gorm"
 )
 
-// InsertBaseLog inserts a LogBase into the database.
+// InsertBaseLog inserts a LogDetails into the database.
 //
-// It takes a *gorm.DB and a pkg.LogBase as parameters.
+// It takes a *gorm.DB and a pkg.LogDetails as parameters.
 // It returns an error.
-func InsertBaseLog(db *gorm.DB, log pkg.LogBase) error {
+func InsertBaseLog(db *gorm.DB, log pkg.LogDetails) error {
 	return db.Create(&log).Error
 }
 

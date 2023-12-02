@@ -55,7 +55,7 @@ func SaveLog(log interface{}) error {
 // The function returns an error type.
 func insertLogGorm(db *gorm.DB, log interface{}) error {
 	switch log := log.(type) {
-	case pkg.LogBase:
+	case pkg.LogDetails:
 		return dbhandler.InsertBaseLog(db, log)
 	case pkg.LogFunction:
 		return dbhandler.InsertFunctionLog(db, log)
@@ -72,7 +72,7 @@ func insertLogGorm(db *gorm.DB, log interface{}) error {
 //
 // db is the MongoDB client.
 // log is the log to be inserted. It can be one of the following types:
-// - pkg.LogBase
+// - pkg.LogDetails
 // - pkg.LogFunction
 // - pkg.LogDatabase
 // - pkg.LogRequest
@@ -80,7 +80,7 @@ func insertLogGorm(db *gorm.DB, log interface{}) error {
 // Returns an error if the insertion fails.
 func insertLogMongo(db *mongo.Client, log interface{}) error {
 	switch log := log.(type) {
-	case pkg.LogBase:
+	case pkg.LogDetails:
 		return mongodb.InsertBaseLog(db, log)
 	case pkg.LogFunction:
 		return mongodb.InsertFunctionLog(db, log)

@@ -6,7 +6,7 @@ import (
 	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
-// newBaseLog creates a new instance of the LogBase struct.
+// newLogDetails creates a new instance of the LogDetails struct.
 //
 // Parameters:
 // - priority: The priority of the log.
@@ -14,9 +14,9 @@ import (
 // - errMsg: The specific error message.
 //
 // Return type:
-// - domain.LogBase: The newly created LogBase instance.
-func newBaseLog(priority domain.Priority, genericErrMsg string, errMsg string) domain.LogBase {
-	return domain.LogBase{
+// - domain.LogDetails: The newly created LogDetails instance.
+func newLogDetails(priority domain.Priority, genericErrMsg string, errMsg string) domain.LogDetails {
+	return domain.LogDetails{
 		Priority:            priority,
 		LogLevel:            domain.PriorityToString[priority],
 		Timestamp:           time.Now(),
@@ -37,7 +37,7 @@ func newBaseLog(priority domain.Priority, genericErrMsg string, errMsg string) d
 // - a LogFunction struct representing the function log
 func newFunctionLog(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) domain.LogFunction {
 	return domain.LogFunction{
-		LogBase: domain.LogBase{
+		LogDetails: domain.LogDetails{
 			Priority:            priority,
 			LogLevel:            domain.PriorityToString[priority],
 			Timestamp:           time.Now(),
@@ -61,7 +61,7 @@ func newFunctionLog(priority domain.Priority, functionName string, genericErrMsg
 //   - domain.LogDatabase: the created database log entry.
 func newDatabaseLog(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) domain.LogDatabase {
 	return domain.LogDatabase{
-		LogBase: domain.LogBase{
+		LogDetails: domain.LogDetails{
 			Priority:            priority,
 			LogLevel:            domain.PriorityToString[priority],
 			Timestamp:           time.Now(),
@@ -87,7 +87,7 @@ func newDatabaseLog(priority domain.Priority, tableName string, query string, ge
 // Return type: domain.LogRequest
 func newRequestLog(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) domain.LogRequest {
 	return domain.LogRequest{
-		LogBase: domain.LogBase{
+		LogDetails: domain.LogDetails{
 			Priority:            priority,
 			LogLevel:            domain.PriorityToString[priority],
 			Timestamp:           time.Now(),

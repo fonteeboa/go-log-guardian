@@ -13,7 +13,7 @@ import (
 // Client is the MongoDB client used to connect to the database.
 // log is the base log to be inserted.
 // Returns an error if the insertion fails.
-func InsertBaseLog(Client *mongo.Client, log pkg.LogBase) error {
+func InsertBaseLog(Client *mongo.Client, log pkg.LogDetails) error {
 	collection := getCollection(Client, "baseLogs")
 
 	_, err := collection.InsertOne(context.Background(), log)

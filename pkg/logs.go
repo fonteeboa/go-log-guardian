@@ -75,12 +75,9 @@ func LogRequests(priority domain.Priority, method string, statusCode int, path s
 	return true, logData
 }
 
-// LogError logs an error message with the given priority, generic error message, and specific error message.
-//
-// It returns a boolean value indicating if the error was logged successfully and the log data.
-func LogError(priority domain.Priority, genericErrMsg string, errMsg string) (bool, domain.LogBase) {
+func Log(priority domain.Priority, genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
 	debug(priority, genericErrMsg, errMsg)
-	logData := error(priority, genericErrMsg, errMsg)
+	logData := details(priority, genericErrMsg, errMsg)
 
 	logDb := checkEnvironment()
 	if logDb {
@@ -88,4 +85,79 @@ func LogError(priority domain.Priority, genericErrMsg string, errMsg string) (bo
 	}
 
 	return true, logData
+}
+
+func LogEmerg(genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_EMERG, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogCritical(genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_CRIT, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogError(priority domain.Priority, genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_ERR, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogAlert(genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_ALERT, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogWarning(genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_WARNING, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogNotice(genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_NOTICE, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogInfo(genericErrMsg string, errMsg string) (bool, domain.LogDetails) {
+	logData := details(domain.LOG_INFO, genericErrMsg, errMsg)
+
+	logDb := checkEnvironment()
+	if logDb {
+		services.SaveLog(logData)
+	}
+	return true, logData
+}
+
+func LogDebug(genericErrMsg string, errMsg string) bool {
+	debug(domain.LOG_DEBUG, genericErrMsg, errMsg)
+	return true
 }

@@ -38,7 +38,7 @@ func MigrateMongo(client *mongo.Client) error {
 		{"functionLogs", &pkg.LogFunction{}},
 		{"databaseLogs", &pkg.LogDatabase{}},
 		{"requestLogs", &pkg.LogRequest{}},
-		{"baseLogs", &pkg.LogBase{}},
+		{"baseLogs", &pkg.LogDetails{}},
 	}
 
 	for _, col := range collections {
