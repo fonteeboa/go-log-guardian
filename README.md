@@ -2,9 +2,7 @@
 
 <p align="center"> <strong>Open-Source Logger Assistant</strong> </p>
 
-[![link to license file](https://img.shields.io/github/license/fonteeboa/go-log-guardian)](https://github.com/fonteeboa/go-log-guardian/blob/main/LICENSE)
-
-[![link to Go version](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)
+[![link to license file](https://img.shields.io/github/license/fonteeboa/go-log-guardian)](https://github.com/fonteeboa/go-log-guardian/blob/main/LICENSE) [![link to Go version](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)
 
 O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas vizando a importância da tradução para o usuário final. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
 
