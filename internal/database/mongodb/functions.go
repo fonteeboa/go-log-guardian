@@ -13,7 +13,7 @@ import (
 // Client is the MongoDB client used to connect to the database.
 // log is the base log to be inserted.
 // Returns an error if the insertion fails.
-func InsertBaseLog(Client *mongo.Client, log pkg.BaseLog) error {
+func InsertBaseLog(Client *mongo.Client, log pkg.LogBase) error {
 	collection := getCollection(Client, "baseLogs")
 
 	_, err := collection.InsertOne(context.Background(), log)
@@ -25,7 +25,7 @@ func InsertBaseLog(Client *mongo.Client, log pkg.BaseLog) error {
 // Client is a MongoDB client.
 // log is the function log to be inserted.
 // Returns an error if the insertion fails.
-func InsertFunctionLog(Client *mongo.Client, log pkg.FunctionLog) error {
+func InsertFunctionLog(Client *mongo.Client, log pkg.LogFunction) error {
 	collection := getCollection(Client, "functionLogs")
 	_, err := collection.InsertOne(context.Background(), log)
 	return err
@@ -33,9 +33,9 @@ func InsertFunctionLog(Client *mongo.Client, log pkg.FunctionLog) error {
 
 // InsertDatabaseLog inserts a database log into the specified collection.
 //
-// It takes a mongo.Client object and a pkg.DatabaseLog object as parameters.
+// It takes a mongo.Client object and a pkg.LogDatabase object as parameters.
 // It returns an error if the insertion fails.
-func InsertDatabaseLog(Client *mongo.Client, log pkg.DatabaseLog) error {
+func InsertDatabaseLog(Client *mongo.Client, log pkg.LogDatabase) error {
 	collection := getCollection(Client, "databaseLogs")
 	_, err := collection.InsertOne(context.Background(), log)
 	return err
@@ -49,7 +49,7 @@ func InsertDatabaseLog(Client *mongo.Client, log pkg.DatabaseLog) error {
 //
 // Returns:
 // - error: An error, if any, encountered during the insertion process.
-func InsertRequestLog(Client *mongo.Client, log pkg.RequestLog) error {
+func InsertRequestLog(Client *mongo.Client, log pkg.LogRequest) error {
 	collection := getCollection(Client, "requestLogs")
 	_, err := collection.InsertOne(context.Background(), log)
 	return err

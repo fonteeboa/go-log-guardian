@@ -15,8 +15,8 @@ import (
 //
 // Returns:
 // - bool: true if the log data was successfully saved, false otherwise.
-// - domain.FunctionLog: the logged data.
-func LogFunction(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) (bool, domain.FunctionLog) {
+// - domain.LogFunction: the logged data.
+func LogFunction(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) (bool, domain.LogFunction) {
 	debug(priority, genericErrMsg, errMsg)
 	logData := function(priority, functionName, genericErrMsg, errMsg)
 
@@ -37,8 +37,8 @@ func LogFunction(priority domain.Priority, functionName string, genericErrMsg st
 // - genericErrMsg: a generic error message (string type).
 // - errMsg: a specific error message (string type).
 //
-// It returns a boolean value indicating if the log was saved successfully and the logged data (domain.DatabaseLog type).
-func LogDataBase(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) (bool, domain.DatabaseLog) {
+// It returns a boolean value indicating if the log was saved successfully and the logged data (domain.LogDatabase type).
+func LogDataBase(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) (bool, domain.LogDatabase) {
 	debug(priority, genericErrMsg, errMsg)
 	logData := database(priority, tableName, query, genericErrMsg, errMsg)
 
@@ -62,8 +62,8 @@ func LogDataBase(priority domain.Priority, tableName string, query string, gener
 //   - errMsg: the error message
 //
 // It returns a boolean indicating whether the log was saved successfully and
-// a RequestLog struct containing the log data.
-func LogRequests(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) (bool, domain.RequestLog) {
+// a LogRequest struct containing the log data.
+func LogRequests(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) (bool, domain.LogRequest) {
 	debug(priority, genericErrMsg, errMsg)
 	logData := request(priority, method, statusCode, path, responseSize, genericErrMsg, errMsg)
 
@@ -78,7 +78,7 @@ func LogRequests(priority domain.Priority, method string, statusCode int, path s
 // LogError logs an error message with the given priority, generic error message, and specific error message.
 //
 // It returns a boolean value indicating if the error was logged successfully and the log data.
-func LogError(priority domain.Priority, genericErrMsg string, errMsg string) (bool, domain.BaseLog) {
+func LogError(priority domain.Priority, genericErrMsg string, errMsg string) (bool, domain.LogBase) {
 	debug(priority, genericErrMsg, errMsg)
 	logData := error(priority, genericErrMsg, errMsg)
 

@@ -5,8 +5,8 @@ import "github.com/fonteeBoa/go-log-guardian/pkg/domain"
 // function is a Go function that takes in a priority, functionName, genericErrMsg, and errMsg as parameters.
 //
 // It calls the debug function with the provided priority, genericErrMsg, and errMsg arguments.
-// Then it returns a new FunctionLog struct by calling the newFunctionLog function with the provided priority, functionName, genericErrMsg, and errMsg arguments.
-func function(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) domain.FunctionLog {
+// Then it returns a new LogFunction struct by calling the newFunctionLog function with the provided priority, functionName, genericErrMsg, and errMsg arguments.
+func function(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) domain.LogFunction {
 	debug(priority, genericErrMsg, errMsg)
 	return newFunctionLog(priority, functionName, genericErrMsg, errMsg)
 }
@@ -21,8 +21,8 @@ func function(priority domain.Priority, functionName string, genericErrMsg strin
 // - errMsg: the specific error message.
 //
 // Returns:
-// - domain.DatabaseLog: the generated database log.
-func database(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) domain.DatabaseLog {
+// - domain.LogDatabase: the generated database log.
+func database(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) domain.LogDatabase {
 	debug(priority, genericErrMsg, errMsg)
 	return newDatabaseLog(priority, tableName, query, genericErrMsg, errMsg)
 }
@@ -39,8 +39,8 @@ func database(priority domain.Priority, tableName string, query string, genericE
 //   - errMsg: The specific error message.
 //
 // Returns:
-//   - domain.RequestLog: The generated request log.
-func request(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) domain.RequestLog {
+//   - domain.LogRequest: The generated request log.
+func request(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) domain.LogRequest {
 	debug(priority, genericErrMsg, errMsg)
 	return newRequestLog(priority, method, statusCode, path, responseSize, genericErrMsg, errMsg)
 }
@@ -50,8 +50,8 @@ func request(priority domain.Priority, method string, statusCode int, path strin
 // priority: The priority of the error message.
 // genericErrMsg: The generic error message.
 // errMsg: The specific error message.
-// Returns a domain.BaseLog.
-func error(priority domain.Priority, genericErrMsg string, errMsg string) domain.BaseLog {
+// Returns a domain.LogBase.
+func error(priority domain.Priority, genericErrMsg string, errMsg string) domain.LogBase {
 	debug(priority, genericErrMsg, errMsg)
 	return newBaseLog(priority, genericErrMsg, errMsg)
 }

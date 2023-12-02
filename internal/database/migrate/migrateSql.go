@@ -11,7 +11,7 @@ import (
 // db: the gorm.DB connection.
 // Returns: an error if there was a problem during migration.
 func MigrateSql(db *gorm.DB) error {
-	if err := db.AutoMigrate(&pkg.BaseLog{}, &pkg.FunctionLog{}, &pkg.DatabaseLog{}, &pkg.RequestLog{}); err != nil {
+	if err := db.AutoMigrate(&pkg.LogBase{}, &pkg.LogFunction{}, &pkg.LogDatabase{}, &pkg.LogRequest{}); err != nil {
 		return err
 	}
 	return nil

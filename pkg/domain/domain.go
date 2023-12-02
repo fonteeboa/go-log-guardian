@@ -29,8 +29,8 @@ var PriorityToString = map[Priority]string{
 	LOG_DEBUG:   "LOG_DEBUG",
 }
 
-// BaseLog represents the common fields for all types of logs
-type BaseLog struct {
+// LogBase represents the common fields for all types of logs
+type LogBase struct {
 	Priority            Priority  // Log priority
 	LogLevel            string    // Log level (debug, info, error, etc.)
 	Timestamp           time.Time // Time when the log was registered
@@ -38,22 +38,22 @@ type BaseLog struct {
 	ErrorMessage        string    // Specific error message
 }
 
-// FunctionLog represents a log record related to a specific function
-type FunctionLog struct {
-	BaseLog             // Incorporates BaseLog fields
+// LogFunction represents a log record related to a specific function
+type LogFunction struct {
+	LogBase             // Incorporates LogBase fields
 	FunctionName string // Name of the registered function
 }
 
-// DatabaseLog represents a log record related to database operations
-type DatabaseLog struct {
-	BaseLog          // Incorporates BaseLog fields
+// LogDatabase represents a log record related to database operations
+type LogDatabase struct {
+	LogBase          // Incorporates LogBase fields
 	TableName string // Name of the table related to the operation
 	Query     string // Query executed in the database
 }
 
-// RequestLog represents a log record related to requests
-type RequestLog struct {
-	BaseLog             // Incorporates BaseLog fields
+// LogRequest represents a log record related to requests
+type LogRequest struct {
+	LogBase             // Incorporates LogBase fields
 	Method       string // HTTP method of the request (GET, POST, etc.)
 	StatusCode   int    // HTTP status code
 	Path         string // Path of the request
