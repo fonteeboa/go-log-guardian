@@ -2,9 +2,9 @@ name: Go Unit Tests
 
 on:
   push:
-    branches: [ main ] # Executar quando ocorrer push na branch main
+    branches: [ "master" ]
   pull_request:
-    branches: [ main ] # Executar quando houver pull request na branch main
+    branches: [ "master" ]
 
 jobs:
   test:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: '1.21' # Usar a versão mais recente da série 1.21 do Go
+          go-version: '1.21'
 
       - name: Run unit tests
-        run: go test -v ./... # Comando para executar os testes unitários
+        run: go test -v ./...
