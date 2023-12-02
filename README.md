@@ -2,14 +2,11 @@
 
 <p align="center"> <strong>Open-Source Logger Assistant</strong> </p>
 
-<div align="center">
-    <a href="https://github.com/fonteeboa/go-log-guardian">![link to main GitHub showing tests result](https://img.shields.io/github/stars/fonteeboa/go-log-guardian?style=social)</a>
-    <a href="https://github.com/fonteeboa/go-log-guardian">![link to main GitHub showing Stars number](https://img.shields.io/github/stars/fonteeboa/go-log-guardian?style=social)</a>
-    <a href="https://github.com/fonteeboa/go-log-guardian/blob/main/LICENSE">![link to license file](https://img.shields.io/github/license/fonteeboa/go-log-guardian)</a>
-    <a href="https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian">![link to 
-    Go version](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)</a>
-
-</div>
+[![test status](https://github.com/fonteeboa/go-log-guardian/workflows/tests/badge.svg?branch=master "test status")](https://github.com/fonteeboa/go-log-guardian/actions)
+[![link to main GitHub showing tests result](https://img.shields.io/github/stars/fonteeboa/go-log-guardian?style=social)](https://github.com/fonteeboa/go-log-guardian)
+[![link to main GitHub showing Stars number](https://img.shields.io/github/stars/fonteeboa/go-log-guardian?style=social)](https://github.com/fonteeboa/go-log-guardian)
+[![link to license file](https://img.shields.io/github/license/fonteeboa/go-log-guardian)](https://github.com/fonteeboa/go-log-guardian/blob/main/LICENSE)
+[![link to Go version](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)
 
 
 # go-log-guardian
