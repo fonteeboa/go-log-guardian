@@ -1,16 +1,18 @@
 # go-log-guardian
 
-O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
+
+
+O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas vizando a importância da tradução para o usuário final. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
 
 ## Funcionalidades
 
-- Padronização de Logs: O Log Guardian oferece uma estrutura unificada para diferentes tipos de logs, desde logs de função, operações em banco de dados até logs de requisições.
+🔹 Padronização de Logs: O Log Guardian oferece uma estrutura unificada para diferentes tipos de logs, desde logs de função, operações em banco de dados até logs de requisições.
 
-- Configuração Flexível: Permite a fácil integração com diferentes sistemas, possibilitando a customização e configuração dos logs de acordo com as necessidades específicas.
+🔹 Configuração Flexível: Permite a fácil integração com diferentes sistemas, possibilitando a customização e configuração dos logs de acordo com as necessidades específicas.
 
-- Conexão com Banco de Dados: Além da gestão dos logs, o Log Guardian pode se integrar a diferentes tipos de banco de dados, como PostgreSQL, MySQL, SQLite e MongoDB. A configuração é simples, utilizando variáveis de ambiente para especificar os detalhes de conexão.
+🔹 Conexão com Banco de Dados: Além da gestão dos logs, o Log Guardian pode se integrar a diferentes tipos de banco de dados, como PostgreSQL, MySQL, SQLite e MongoDB. A configuração é simples, utilizando variáveis de ambiente para especificar os detalhes de conexão.
 
-- Inserção Automática de Logs: Quando configurado corretamente com variáveis de ambiente, o Log Guardian é capaz de inserir automaticamente os logs no banco de dados especificado.
+🔹 Inserção Automática de Logs: Quando configurado corretamente com variáveis de ambiente, o Log Guardian é capaz de inserir automaticamente os logs no banco de dados especificado.
 
 # Uso
 O Log Guardian é flexível e se adapta à configuração do ambiente em que é executado. Se as variáveis de ambiente necessárias não estiverem configuradas, o Log Guardian ainda poderá retornar o modelo do log específico para inserção manual no banco de dados.
