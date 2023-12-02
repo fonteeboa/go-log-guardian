@@ -1,4 +1,4 @@
-package pkg
+package services
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 //
 // This function does not take any parameters.
 // It returns a boolean value indicating whether the "LOG_GUARDIAN_DATABASE_TYPE" environment variable is set or not.
-func checkEnvironment() bool {
+func CheckEnvironment() bool {
 	insertDB := os.Getenv("LOG_GUARDIAN_DATABASE_TYPE")
 	return insertDB != ""
 }
@@ -22,7 +22,7 @@ func checkEnvironment() bool {
 //   - priority: the priority level of the error message (domain.Priority)
 //   - genericErrMsg: the generic error message (string)
 //   - errMsg: the specific error message (string)
-func debug(priority domain.Priority, genericErrMsg string, errMsg string) {
+func Debug(priority domain.Priority, genericErrMsg string, errMsg string) {
 	if priority == domain.LOG_DEBUG {
 		fmt.Println(domain.PriorityToString[priority] + ": " + genericErrMsg + " " + errMsg)
 	}
