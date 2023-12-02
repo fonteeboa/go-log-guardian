@@ -6,7 +6,7 @@
 
 O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas vizando a importância da tradução para o usuário final. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
 
-<p align="center"> <strong>Funcionalidades</strong> </p>
+<h2 align="center"> <strong>Funcionalidades</strong> </h2>
 
 🔹 Padronização de Logs: O Log Guardian oferece uma estrutura unificada para diferentes tipos de logs, desde logs de função, operações em banco de dados até logs de requisições.
 
@@ -16,7 +16,7 @@ O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs d
 
 🔹 Inserção Automática de Logs: Quando configurado corretamente com variáveis de ambiente, o Log Guardian é capaz de inserir automaticamente os logs no banco de dados especificado.
 
-<p align="center"> <strong>Uso</strong> </p>
+<h2 align="center"> <strong>Uso</strong> </h2>
 
 O Log Guardian é flexível e se adapta à configuração do ambiente em que é executado. Se as variáveis de ambiente necessárias não estiverem configuradas, o Log Guardian ainda poderá retornar o modelo do log específico para inserção manual no banco de dados.
 
@@ -26,11 +26,11 @@ Essa flexibilidade permite uma fácil integração e uso do Log Guardian em dife
 
 É recomendável consultar a seção de Configuração para detalhes sobre as variáveis de ambiente necessárias para uma configuração completa do Log Guardian.
 
-<p align="center"> <strong>Configuração</strong> </p>
+<h2 align="center"> <strong>Configuração</strong> </h2>
 
 O Log Guardian utiliza variáveis de ambiente para configurar suas operações de banco, incluindo definições de conexão com banco de dados e outras configurações essenciais. Aqui está a lista das variáveis de ambiente disponíveis:
 
-### Banco de Dados Relacional
+<h4 align="center"> <strong>Banco de Dados Relacional</strong> </h4>
 
 #### PostgreSQL
 ```
@@ -52,7 +52,9 @@ MYSQL_DBNAME: Nome do banco de dados MySQL a ser utilizado.
 ```
 SQLITE_PATH: Caminho do arquivo SQLite, se for o banco de dados escolhido.
 ```
-### Banco de Dados NoSQL
+
+<h4 align="center"> <strong>Banco de Dados NoSQL</strong> </h4>
+
 #### MongoDB
 ```
 MONGODB_URI: Define o URI de conexão para o MongoDB.
