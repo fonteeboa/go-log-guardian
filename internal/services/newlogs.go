@@ -6,7 +6,7 @@ import (
 	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
-// newLogDetails creates a new instance of the LogDetails struct.
+// NewLogDetails creates a new instance of the LogDetails struct.
 //
 // Parameters:
 // - priority: The priority of the log.
@@ -15,7 +15,7 @@ import (
 //
 // Return type:
 // - domain.LogDetails: The newly created LogDetails instance.
-func newLogDetails(priority domain.Priority, genericErrMsg string, errMsg string) domain.LogDetails {
+func NewLogDetails(priority domain.Priority, genericErrMsg string, errMsg string) domain.LogDetails {
 	return domain.LogDetails{
 		Priority:            priority,
 		LogLevel:            domain.PriorityToString[priority],
@@ -25,7 +25,7 @@ func newLogDetails(priority domain.Priority, genericErrMsg string, errMsg string
 	}
 }
 
-// newFunctionLog creates a new function log with the given priority, function name, generic error message, and error message.
+// NewFunctionLog creates a new function log with the given priority, function name, generic error message, and error message.
 //
 // Parameters:
 // - priority: the priority of the log
@@ -35,7 +35,7 @@ func newLogDetails(priority domain.Priority, genericErrMsg string, errMsg string
 //
 // Returns:
 // - a LogFunction struct representing the function log
-func newFunctionLog(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) domain.LogFunction {
+func NewFunctionLog(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) domain.LogFunction {
 	return domain.LogFunction{
 		LogDetails: domain.LogDetails{
 			Priority:            priority,
@@ -48,7 +48,7 @@ func newFunctionLog(priority domain.Priority, functionName string, genericErrMsg
 	}
 }
 
-// newDatabaseLog creates a new database log entry.
+// NewDatabaseLog creates a new database log entry.
 //
 // Parameters:
 //   - priority: the priority of the log entry (domain.Priority).
@@ -59,7 +59,7 @@ func newFunctionLog(priority domain.Priority, functionName string, genericErrMsg
 //
 // Returns:
 //   - domain.LogDatabase: the created database log entry.
-func newDatabaseLog(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) domain.LogDatabase {
+func NewDatabaseLog(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) domain.LogDatabase {
 	return domain.LogDatabase{
 		LogDetails: domain.LogDetails{
 			Priority:            priority,
@@ -73,7 +73,7 @@ func newDatabaseLog(priority domain.Priority, tableName string, query string, ge
 	}
 }
 
-// newRequestLog creates a new request log with the given parameters.
+// NewRequestLog creates a new request log with the given parameters.
 //
 // Parameters:
 // - priority: the priority of the log.
@@ -85,7 +85,7 @@ func newDatabaseLog(priority domain.Priority, tableName string, query string, ge
 // - errMsg: a specific error message.
 //
 // Return type: domain.LogRequest
-func newRequestLog(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) domain.LogRequest {
+func NewRequestLog(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) domain.LogRequest {
 	return domain.LogRequest{
 		LogDetails: domain.LogDetails{
 			Priority:            priority,
