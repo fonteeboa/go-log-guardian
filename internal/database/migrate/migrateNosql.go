@@ -35,10 +35,10 @@ func MigrateMongo(client *mongo.Client) error {
 		Name   string
 		Models interface{}
 	}{
-		{"functionLogs", &pkg.FunctionLog{}},
-		{"databaseLogs", &pkg.DatabaseLog{}},
-		{"requestLogs", &pkg.RequestLog{}},
-		{"baseLogs", &pkg.BaseLog{}},
+		{"functionLogs", &pkg.LogFunction{}},
+		{"databaseLogs", &pkg.LogDatabase{}},
+		{"requestLogs", &pkg.LogRequest{}},
+		{"baseLogs", &pkg.LogBase{}},
 	}
 
 	for _, col := range collections {
