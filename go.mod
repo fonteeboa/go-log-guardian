@@ -1,6 +1,6 @@
 module github.com/fonteeBoa/go-log-guardian
 
-go 1.21.3
+go 1.21
 
 replace github.com/fonteeBoa/go-log-guardian => github.com/fonteeBoa/go-log-guardian v1.0.0
 
