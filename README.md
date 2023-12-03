@@ -2,7 +2,6 @@
 
 <p align="center"> <strong>Open-Source Logger Assistant</strong> </p>
 
-[![link to license file](https://img.shields.io/github/license/fonteeboa/go-log-guardian)](https://github.com/fonteeboa/go-log-guardian/blob/main/LICENSE)
 [![link to Go version](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)](https://img.shields.io/github/go-mod/go-version/fonteeboa/go-log-guardian)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/fonteeBoa/go-log-guardian)
