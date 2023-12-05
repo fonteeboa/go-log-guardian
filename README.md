@@ -7,8 +7,8 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/fonteeBoa/go-log-guardian)
 [![go report card](https://goreportcard.com/badge/github.com/fonteeBoa/go-log-guardian "go report card")](https://goreportcard.com/report/github.com/fonteeBoa/go-log-guardian)
-
-**English README**: Dive into the English version of the project's documentation [here](https://github.com/fonteeboa/go-log-guardian/blob/master/README_en_us.md)
+1
+<span style="color:red;">**English README**</span>: Dive into the English version of the project's documentation [here](https://github.com/fonteeboa/go-log-guardian/blob/master/README_en_us.md)
 
 O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs de maneira eficiente e organizada em sistemas vizando a importância da tradução para o usuário final. Com a flexibilidade de lidar com diferentes tipos de logs, esta biblioteca proporciona uma estrutura consistente para a geração e gerenciamento de logs gerais e específicos, permitindo a integração com diferentes sistemas.
 
