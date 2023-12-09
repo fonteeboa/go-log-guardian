@@ -70,11 +70,11 @@ MONGODB_DBNAME: Nome do banco de dados MongoDB a ser utilizado.
 <h4 align="center"> <strong>Configuração Geral</strong> </h4>
 
 ```
-LOG_GUARDIAN_DATABASE_TYPE: Especifica o tipo de banco de dados a ser utilizado pelo Log Guardian (Valores: sqlite, postgres, mysql, mongodb).
+DATABASE_TYPE: Especifica o tipo de banco de dados a ser utilizado pelo Log Guardian (Valores: sqlite, postgres, mysql, mongodb).
 ```
 
 <h4 align="center"> <strong>Observações</strong> </h4>
 
-Para utilizar as funções automáticas do go-log-guardian, é obrigatório o uso da variável LOG_GUARDIAN_DATABASE_TYPE, pois algumas validações são executadas com base nesta variável antes de chamar as rotinas de inserção.
+Para utilizar as funções automáticas do go-log-guardian, é obrigatório o uso da variável DATABASE_TYPE, pois algumas validações são executadas com base nesta variável antes de chamar as rotinas de inserção.
 
 Certifique-se de fornecer valores válidos e corretos para cada uma dessas variáveis de ambiente. Isso garante uma conexão adequada e o funcionamento correto do Log Guardian com o banco de dados desejado.

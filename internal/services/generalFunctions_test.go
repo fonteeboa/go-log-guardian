@@ -12,7 +12,7 @@ import (
 
 func TestCheckEnvironmentWithEnvVariableSet(t *testing.T) {
 	// Set the environment variable for testing
-	os.Setenv("LOG_GUARDIAN_DATABASE_TYPE", "test")
+	os.Setenv("DATABASE_TYPE", "test")
 
 	envCheck := services.CheckEnvironment()
 
@@ -21,7 +21,7 @@ func TestCheckEnvironmentWithEnvVariableSet(t *testing.T) {
 
 func TestCheckEnvironmentWithEnvVariableNotSet(t *testing.T) {
 	// Unset the environment variable for testing
-	os.Unsetenv("LOG_GUARDIAN_DATABASE_TYPE")
+	os.Unsetenv("DATABASE_TYPE")
 
 	envCheck := services.CheckEnvironment()
 

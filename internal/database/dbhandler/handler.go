@@ -14,13 +14,13 @@ import (
 	"github.com/fonteeBoa/go-log-guardian/internal/database/sqlite"
 )
 
-// GetConnection retrieves the database connection based on the LOG_GUARDIAN_DATABASE_TYPE environment variable.
+// GetConnection retrieves the database connection based on the DATABASE_TYPE environment variable.
 //
 // It returns the *gorm.DB and *mongo.Client connections and an error.
 func GetConnection() (*gorm.DB, *mongo.Client, error) {
-	dbType := os.Getenv("LOG_GUARDIAN_DATABASE_TYPE")
+	dbType := os.Getenv("DATABASE_TYPE")
 	if dbType == "" {
-		fmt.Println("LOG_GUARDIAN_DATABASE_TYPE not set")
+		fmt.Println("DATABASE_TYPE not set")
 		return nil, nil, errors.New("database type not specified")
 	}
 

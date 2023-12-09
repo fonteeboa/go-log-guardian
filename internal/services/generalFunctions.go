@@ -10,9 +10,9 @@ import (
 // checkEnvironment checks the environment and returns a boolean value.
 //
 // This function does not take any parameters.
-// It returns a boolean value indicating whether the "LOG_GUARDIAN_DATABASE_TYPE" environment variable is set or not.
+// It returns a boolean value indicating whether the "DATABASE_TYPE" environment variable is set or not.
 func CheckEnvironment() bool {
-	insertDB := os.Getenv("LOG_GUARDIAN_DATABASE_TYPE")
+	insertDB := os.Getenv("DATABASE_TYPE")
 	return insertDB != ""
 }
 
