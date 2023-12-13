@@ -6,14 +6,15 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/fonteeBoa/go-log-guardian/internal/services"
+	"github.com/fonteeBoa/go-log-guardian/internal/testUtils/mocks"
 	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
 func TestFunction(t *testing.T) {
 	priority := domain.LOG_INFO
 	functionName := "TestFunction"
-	genericErrMsg := "Test generic error"
-	errMsg := "Test specific error"
+	genericErrMsg := mocks.MockGeneralError
+	errMsg := mocks.MockSpecificError
 
 	logFunction := services.Function(priority, functionName, genericErrMsg, errMsg)
 
@@ -27,10 +28,10 @@ func TestFunction(t *testing.T) {
 
 func TestDatabase(t *testing.T) {
 	priority := domain.LOG_DEBUG
-	tableName := "TestTable"
+	tableName := mocks.MockTable
 	query := "SELECT * FROM TestTable"
-	genericErrMsg := "Test generic error"
-	errMsg := "Test specific error"
+	genericErrMsg := mocks.MockGeneralError
+	errMsg := mocks.MockSpecificError
 
 	databaseLog := services.Database(priority, tableName, query, genericErrMsg, errMsg)
 
@@ -49,8 +50,8 @@ func TestRequest(t *testing.T) {
 	statusCode := 500
 	path := "/test/path"
 	responseSize := 1024
-	genericErrMsg := "Test generic error"
-	errMsg := "Test specific error"
+	genericErrMsg := mocks.MockGeneralError
+	errMsg := mocks.MockSpecificError
 
 	requestLog := services.Request(priority, method, statusCode, path, responseSize, genericErrMsg, errMsg)
 
@@ -67,8 +68,8 @@ func TestRequest(t *testing.T) {
 
 func TestDetails(t *testing.T) {
 	priority := domain.LOG_CRIT
-	genericErrMsg := "Test generic error"
-	errMsg := "Test specific error"
+	genericErrMsg := mocks.MockGeneralError
+	errMsg := mocks.MockSpecificError
 
 	logDetails := services.Details(priority, genericErrMsg, errMsg)
 

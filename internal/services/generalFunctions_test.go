@@ -7,6 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/fonteeBoa/go-log-guardian/internal/services"
+	"github.com/fonteeBoa/go-log-guardian/internal/testUtils/mocks"
 	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
@@ -40,8 +41,8 @@ func TestDebugPrintsMessageForLogDebugPriority(t *testing.T) {
 	}()
 
 	priority := domain.LOG_DEBUG
-	genericErrMsg := "Test generic error"
-	errMsg := "Test specific error"
+	genericErrMsg := mocks.MockGeneralError
+	errMsg := mocks.MockSpecificError
 
 	services.Debug(priority, genericErrMsg, errMsg)
 
@@ -67,8 +68,8 @@ func TestDebugDoesNotPrintMessageForNonLogDebugPriority(t *testing.T) {
 	}()
 
 	priority := domain.LOG_INFO
-	genericErrMsg := "Test generic error"
-	errMsg := "Test specific error"
+	genericErrMsg := mocks.MockGeneralError
+	errMsg := mocks.MockSpecificError
 
 	services.Debug(priority, genericErrMsg, errMsg)
 
