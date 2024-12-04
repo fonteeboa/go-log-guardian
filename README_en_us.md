@@ -83,7 +83,7 @@ DATABASE_TYPE: Must be set to "elastic" to use ElasticSearch as the log destinat
 <h4 align="center"><strong>General Configuration</strong></h4>
 
 ```textplein
-DATABASE_TYPE: Specifies the type of database to be used by Log Guardian (Values: sqlite, postgres, mysql, mongodb).
+DATABASE_TYPE: Specifies the type of database to be used by Log Guardian (Values: sqlite, postgres, mysql, mongodb, elastic).
 ```
 
 <h4 align="center"><strong>Notes</strong></h4>
