@@ -18,7 +18,7 @@ Log Guardian is a library developed to standardize and efficiently manage logs i
 
 🔹 Flexible Configuration: Allows easy integration with different systems, enabling customization and configuration of logs according to specific needs.
 
-🔹 Database Connection: In addition to log management, Log Guardian can integrate with different types of databases such as PostgreSQL, MySQL, SQLite, and MongoDB. Configuration is simple, using environment variables to specify connection details.
+🔹 Database Connection: In addition to log management, Log Guardian can integrate with different types of databases such as PostgreSQL, MySQL, SQLite, ElasticSearch and MongoDB. Configuration is simple, using environment variables to specify connection details.
 
 🔹 Automatic Log Insertion: When correctly configured with environment variables, Log Guardian can automatically insert logs into the specified database.
 
@@ -39,37 +39,50 @@ Log Guardian uses environment variables to configure its database operations, in
 <h4 align="center"><strong>Relational Database</strong></h4>
 
 #### PostgreSQL
-```
+
+```textplein
 POSTGRES_HOST: Defines the host address for PostgreSQL.
 POSTGRES_EXTERNAL_PORT: Specifies the external port for PostgreSQL.
 POSTGRES_USER: Username for authentication in PostgreSQL.
 POSTGRES_PASSWORD: Password for authentication in PostgreSQL.
 POSTGRES_DB: Name of the PostgreSQL database to be used.
 ```
+
 #### MySQL
-```
+
+```textplein
 MYSQL_HOST: Defines the host address for MySQL.
 MYSQL_PORT: Specifies the port for MySQL.
 MYSQL_USER: Username for authentication in MySQL.
 MYSQL_PASSWORD: Password for authentication in MySQL.
 MYSQL_DBNAME: Name of the MySQL database to be used.
 ```
+
 #### SQLite
-```
+
+```textplein
 SQLITE_PATH: Path to the SQLite file if it is the chosen database.
 ```
 
 <h4 align="center"><strong>NoSQL Database</strong></h4>
 
 #### MongoDB
-```
+
+```textplein
 MONGODB_URI: Defines the connection URI for MongoDB.
 MONGODB_DBNAME: Name of the MongoDB database to be used.
 ```
 
+#### ElasticSearch
+
+```textpleintextplein
+ELASTIC_URI: Specifies the connection URI for ElasticSearch.
+DATABASE_TYPE: Must be set to "elastic" to use ElasticSearch as the log destination.
+```
+
 <h4 align="center"><strong>General Configuration</strong></h4>
 
-```
+```textplein
 DATABASE_TYPE: Specifies the type of database to be used by Log Guardian (Values: sqlite, postgres, mysql, mongodb).
 ```
 
@@ -78,3 +91,5 @@ DATABASE_TYPE: Specifies the type of database to be used by Log Guardian (Values
 To utilize the automatic functions of go-log-guardian, using the DATABASE_TYPE variable is mandatory, as some validations are performed based on this variable before calling the insertion routines.
 
 Ensure to provide valid and correct values for each of these environment variables. This ensures proper connection and functioning of Log Guardian with the desired database.
+
+⚠️ The testMain.go file was created to test log management functionality. To execute this application, you need to configure the environment using Docker Compose, which can be found in the [docker-build-library]((https://github.com/fonteeboa/docker-build-library/tree/master/golang/go-log-guardian)) repository.

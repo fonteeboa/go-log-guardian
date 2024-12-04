@@ -19,7 +19,7 @@ O Log Guardian é uma biblioteca desenvolvida para padronizar e gerenciar logs d
 
 🔹 Configuração Flexível: Permite a fácil integração com diferentes sistemas, possibilitando a customização e configuração dos logs de acordo com as necessidades específicas.
 
-🔹 Conexão com Banco de Dados: Além da gestão dos logs, o Log Guardian pode se integrar a diferentes tipos de banco de dados, como PostgreSQL, MySQL, SQLite e MongoDB. A configuração é simples, utilizando variáveis de ambiente para especificar os detalhes de conexão.
+🔹 Conexão com Banco de Dados: Além da gestão dos logs, o Log Guardian pode se integrar a diferentes tipos de banco de dados, como PostgreSQL, MySQL, SQLite, ElasticSearch e MongoDB. A configuração é simples, utilizando variáveis de ambiente para especificar os detalhes de conexão.
 
 🔹 Inserção Automática de Logs: Quando configurado corretamente com variáveis de ambiente, o Log Guardian é capaz de inserir automaticamente os logs no banco de dados especificado.
 
@@ -40,37 +40,49 @@ O Log Guardian utiliza variáveis de ambiente para configurar suas operações d
 <h4 align="center"> <strong>Banco de Dados Relacional</strong> </h4>
 
 #### PostgreSQL
-```
+
+```textplein
 POSTGRES_HOST: Define o endereço do host para o PostgreSQL.
 POSTGRES_EXTERNAL_PORT: Especifica a porta externa para o PostgreSQL.
 POSTGRES_USER: Nome de usuário para autenticação no PostgreSQL.
 POSTGRES_PASSWORD: Senha para autenticação no PostgreSQL.
 POSTGRES_DB: Nome do banco de dados PostgreSQL a ser utilizado.
 ```
+
 #### MySQL
-```
+
+```textplein
 MYSQL_HOST: Define o endereço do host para o MySQL.
 MYSQL_PORT: Especifica a porta para o MySQL.
 MYSQL_USER: Nome de usuário para autenticação no MySQL.
 MYSQL_PASSWORD: Senha para autenticação no MySQL.
 MYSQL_DBNAME: Nome do banco de dados MySQL a ser utilizado.
 ```
+
 #### SQLite
-```
+
+```textplein
 SQLITE_PATH: Caminho do arquivo SQLite, se for o banco de dados escolhido.
 ```
 
 <h4 align="center"> <strong>Banco de Dados NoSQL</strong> </h4>
 
 #### MongoDB
-```
+```textplein
 MONGODB_URI: Define o URI de conexão para o MongoDB.
 MONGODB_DBNAME: Nome do banco de dados MongoDB a ser utilizado.
 ```
 
+#### ElasticSearch
+
+```textplein
+ELASTIC_URI: Define o URI de conexão para o ElasticSearch.
+DATABASE_TYPE: Deve ser configurado como "elastic" para utilizar o ElasticSearch como destino dos logs.
+```
+
 <h4 align="center"> <strong>Configuração Geral</strong> </h4>
 
-```
+```textplein
 DATABASE_TYPE: Especifica o tipo de banco de dados a ser utilizado pelo Log Guardian (Valores: sqlite, postgres, mysql, mongodb).
 ```
 
@@ -79,3 +91,5 @@ DATABASE_TYPE: Especifica o tipo de banco de dados a ser utilizado pelo Log Guar
 Para utilizar as funções automáticas do go-log-guardian, é obrigatório o uso da variável DATABASE_TYPE, pois algumas validações são executadas com base nesta variável antes de chamar as rotinas de inserção.
 
 Certifique-se de fornecer valores válidos e corretos para cada uma dessas variáveis de ambiente. Isso garante uma conexão adequada e o funcionamento correto do Log Guardian com o banco de dados desejado.
+
+⚠️ O arquivo testMain.go foi criado para testar funcionalidades de gerenciamento de logs. Para executar esta aplicação, é necessário configurar o ambiente utilizando o Docker Compose que pode ser encontrado no repo [docker-build-library](https://github.com/fonteeboa/docker-build-library/tree/master/golang/go-log-guardian)
