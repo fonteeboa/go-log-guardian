@@ -1,3 +1,11 @@
+/**
+ * @file connect.go
+ * @brief Este arquivo contém a função para estabelecer uma conexão com o banco de dados MySQL.
+ *
+ * Ele lê as variáveis de ambiente do arquivo .env e constrói a string de conexão.
+ * A função retorna uma instância de *gorm.DB e um erro.
+ */
+
 package mysql
 
 import (
@@ -10,12 +18,18 @@ import (
 	"gorm.io/gorm"
 )
 
-// Connect establishes a connection to the MySQL database.
-//
-// It reads the environment variables from the .env file and constructs the connection string.
-// The function returns a *gorm.DB instance and an error.
+/**
+ * @brief Estabelece uma conexão com o banco de dados MySQL.
+ *
+ * @details Esta função lê as variáveis de ambiente `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_USER`, `MYSQL_PASSWORD` e `MYSQL_DBNAME`
+ * para construir a string de conexão DSN. Em seguida, tenta abrir uma conexão com o banco de dados usando GORM.
+ * Se a conexão for bem-sucedida, a função retorna uma instância de *gorm.DB. Caso contrário, retorna um erro.
+ * A função também executa migrações no banco de dados.
+ *
+ * @return *gorm.DB Instância do banco de dados GORM.
+ * @return error Erro ocorrido durante a conexão ou migração.
+ */
 func Connect() (*gorm.DB, error) {
-
 	host := os.Getenv("MYSQL_HOST")
 	port := os.Getenv("MYSQL_PORT")
 	user := os.Getenv("MYSQL_USER")

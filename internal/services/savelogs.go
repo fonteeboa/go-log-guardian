@@ -1,3 +1,8 @@
+/**
+ * @file savelogs.go
+ * @brief Este arquivo contém funções para salvar logs em diferentes bancos de dados.
+ */
+
 package services
 
 import (
@@ -13,10 +18,17 @@ import (
 	"gorm.io/gorm"
 )
 
-// SaveLog saves a log to the database.
-//
-// It takes a log interface{} as a parameter.
-// Returns an error if there was a problem saving the log.
+/**
+ * @brief Salva um log no banco de dados.
+ *
+ * @param log O log a ser salvo. Pode ser um dos seguintes tipos:
+ * - pkg.LogDetails
+ * - pkg.LogFunction
+ * - pkg.LogDatabase
+ * - pkg.LogRequest
+ *
+ * @return Retorna um erro se houver um problema ao salvar o log.
+ */
 func SaveLog(log interface{}) error {
 	gormDB, mongoClient, err := dbhandler.GetConnection()
 
@@ -43,16 +55,20 @@ func SaveLog(log interface{}) error {
 	}
 
 	return nil
-
 }
 
-// insertLogGorm inserts a log entry into the database using the provided *gorm.DB connection.
-//
-// The function takes two parameters:
-// - db: a *gorm.DB connection to the database.
-// - log: an interface{} representing the log entry to be inserted.
-//
-// The function returns an error type.
+/**
+ * @brief Insere uma entrada de log no banco de dados usando a conexão *gorm.DB fornecida.
+ *
+ * @param db Conexão *gorm.DB com o banco de dados.
+ * @param log O log a ser inserido. Pode ser um dos seguintes tipos:
+ * - pkg.LogDetails
+ * - pkg.LogFunction
+ * - pkg.LogDatabase
+ * - pkg.LogRequest
+ *
+ * @return Retorna um erro se a inserção falhar.
+ */
 func insertLogGorm(db *gorm.DB, log interface{}) error {
 	switch log := log.(type) {
 	case pkg.LogDetails:
@@ -68,16 +84,18 @@ func insertLogGorm(db *gorm.DB, log interface{}) error {
 	}
 }
 
-// insertLogMongo inserts a log into a MongoDB database.
-//
-// db is the MongoDB client.
-// log is the log to be inserted. It can be one of the following types:
-// - pkg.LogDetails
-// - pkg.LogFunction
-// - pkg.LogDatabase
-// - pkg.LogRequest
-//
-// Returns an error if the insertion fails.
+/**
+ * @brief Insere um log em um banco de dados MongoDB.
+ *
+ * @param db Cliente MongoDB.
+ * @param log O log a ser inserido. Pode ser um dos seguintes tipos:
+ * - pkg.LogDetails
+ * - pkg.LogFunction
+ * - pkg.LogDatabase
+ * - pkg.LogRequest
+ *
+ * @return Retorna um erro se a inserção falhar.
+ */
 func insertLogMongo(db *mongo.Client, log interface{}) error {
 	switch log := log.(type) {
 	case pkg.LogDetails:

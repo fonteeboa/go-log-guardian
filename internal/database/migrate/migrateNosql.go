@@ -10,10 +10,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-// GetDbName returns the name of the MongoDB database.
-//
-// It does not take any parameters.
-// It returns a string representing the name of the database.
+/**
+ * @brief Retorna o nome do banco de dados MongoDB.
+ *
+ * @return Uma string representando o nome do banco de dados.
+ */
 func GetDbName() string {
 	dbName := os.Getenv("MONGODB_DBNAME")
 
@@ -23,10 +24,12 @@ func GetDbName() string {
 	return dbName
 }
 
-// MigrateMongo migrates the MongoDB collections and creates necessary indexes.
-//
-// It takes a *mongo.Client as a parameter.
-// It returns an error if any error occurred during the migration process.
+/**
+ * @brief Migra as coleções do MongoDB e cria os índices necessários.
+ *
+ * @param client Ponteiro para um objeto mongo.Client representando a conexão com o MongoDB.
+ * @return Retorna um erro se houve um problema durante a migração.
+ */
 func MigrateMongo(client *mongo.Client) error {
 	dbName := GetDbName()
 	db := client.Database(dbName)
@@ -61,14 +64,13 @@ func MigrateMongo(client *mongo.Client) error {
 	return nil
 }
 
-// DoesCollectionExist checks if a collection exists in the MongoDB database.
-//
-// Parameters:
-// - client: The MongoDB client.
-// - collectionName: The name of the collection to check.
-//
-// Returns:
-// - bool: true if the collection exists, false otherwise.
+/**
+ * @brief Verifica se uma coleção existe no banco de dados MongoDB.
+ *
+ * @param client Ponteiro para um objeto mongo.Client representando a conexão com o MongoDB.
+ * @param collectionName Uma string representando o nome da coleção a ser verificada.
+ * @return Retorna um valor booleano indicando se a coleção existe ou não.
+ */
 func DoesCollectionExist(client *mongo.Client, collectionName string) bool {
 	dbName := GetDbName()
 	db := client.Database(dbName)

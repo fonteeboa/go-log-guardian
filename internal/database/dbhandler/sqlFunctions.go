@@ -6,43 +6,46 @@ import (
 	"gorm.io/gorm"
 )
 
-// InsertBaseLog inserts a LogDetails into the database.
-//
-// It takes a *gorm.DB and a pkg.LogDetails as parameters.
-// It returns an error.
+/**
+ * @brief Insere um LogDetails no banco de dados.
+ *
+ * @param db Ponteiro para um objeto gorm.DB representando a conexão com o banco de dados.
+ * @param log Objeto pkg.LogDetails representando o log a ser inserido.
+ * @return Retorna um erro se houve um problema durante a inserção no banco de dados.
+ */
 func InsertBaseLog(db *gorm.DB, log pkg.LogDetails) error {
 	return db.Create(&log).Error
 }
 
-// InsertFunctionLog inserts a function log into the database.
-//
-// Parameters:
-// - db: The gorm.DB object representing the database connection.
-// - log: The pkg.LogFunction object representing the function log to be inserted.
-//
-// Returns:
-// - error: An error, if any occurred during the database insert operation.
+/**
+ * @brief Insere um log de função no banco de dados.
+ *
+ * @param db Objeto gorm.DB representando a conexão com o banco de dados.
+ * @param log Objeto pkg.LogFunction representando o log de função a ser inserido.
+ * @return Retorna um erro se houve um problema durante a inserção no banco de dados.
+ */
 func InsertFunctionLog(db *gorm.DB, log pkg.LogFunction) error {
 	return db.Create(&log).Error
 }
 
-// InsertDatabaseLog inserts a database log into the given *gorm.DB instance.
-//
-// It takes the following parameter(s):
-// - db: a pointer to a gorm.DB instance representing the database connection.
-// - log: a pkg.LogDatabase struct representing the log to be inserted.
-//
-// It returns an error if there was an issue inserting the log.
+/**
+ * @brief Insere um log de banco de dados no banco de dados.
+ *
+ * @param db Ponteiro para um objeto gorm.DB representando a conexão com o banco de dados.
+ * @param log Estrutura pkg.LogDatabase representando o log a ser inserido.
+ * @return Retorna um erro se houve um problema durante a inserção no banco de dados.
+ */
 func InsertDatabaseLog(db *gorm.DB, log pkg.LogDatabase) error {
 	return db.Create(&log).Error
 }
 
-// InsertRequestLog inserts a request log into the database.
-//
-// It takes a *gorm.DB object as the first parameter, which represents the database connection,
-// and a pkg.LogRequest object as the second parameter, which contains the request log data.
-//
-// It returns an error if there was an issue inserting the request log into the database.
+/**
+ * @brief Insere um log de requisição no banco de dados.
+ *
+ * @param db Objeto gorm.DB representando a conexão com o banco de dados.
+ * @param log Objeto pkg.LogRequest contendo os dados do log de requisição.
+ * @return Retorna um erro se houve um problema durante a inserção no banco de dados.
+ */
 func InsertRequestLog(db *gorm.DB, log pkg.LogRequest) error {
 	return db.Create(&log).Error
 }

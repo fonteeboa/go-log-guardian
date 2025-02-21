@@ -6,10 +6,12 @@ import (
 	"gorm.io/gorm"
 )
 
-// MigrateSql migrates the SQL tables.
-//
-// db: the gorm.DB connection.
-// Returns: an error if there was a problem during migration.
+/**
+ * @brief Migra as tabelas SQL.
+ *
+ * @param db Conexão com o banco de dados gorm.DB.
+ * @return Retorna um erro se houve um problema durante a migração.
+ */
 func MigrateSql(db *gorm.DB) error {
 	if err := db.AutoMigrate(&pkg.LogDetails{}, &pkg.LogFunction{}, &pkg.LogDatabase{}, &pkg.LogRequest{}); err != nil {
 		return err
@@ -17,14 +19,13 @@ func MigrateSql(db *gorm.DB) error {
 	return nil
 }
 
-// DoesTableExist checks if a table exists in the database.
-//
-// Parameters:
-// - db: a pointer to a gorm.DB object representing the database connection.
-// - tableName: a string representing the name of the table to check.
-//
-// Returns:
-// - a boolean value indicating whether the table exists or not.
+/**
+ * @brief Verifica se uma tabela existe no banco de dados.
+ *
+ * @param db Ponteiro para um objeto gorm.DB representando a conexão com o banco de dados.
+ * @param tableName Uma string representando o nome da tabela a ser verificada.
+ * @return Retorna um valor booleano indicando se a tabela existe ou não.
+ */
 func DoesTableExist(db *gorm.DB, tableName string) bool {
 	return db.Migrator().HasTable(tableName)
 }

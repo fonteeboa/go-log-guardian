@@ -14,9 +14,11 @@ import (
 	"github.com/fonteeBoa/go-log-guardian/internal/database/sqlite"
 )
 
-// GetConnection retrieves the database connection based on the DATABASE_TYPE environment variable.
-//
-// It returns the *gorm.DB and *mongo.Client connections and an error.
+/**
+ * @brief Recupera a conexão com o banco de dados com base na variável de ambiente DATABASE_TYPE.
+ *
+ * @return Retorna as conexões *gorm.DB e *mongo.Client e um erro, se houver.
+ */
 func GetConnection() (*gorm.DB, *mongo.Client, error) {
 	dbType := os.Getenv("DATABASE_TYPE")
 	if dbType == "" {

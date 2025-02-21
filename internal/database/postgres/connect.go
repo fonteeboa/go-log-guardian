@@ -1,3 +1,8 @@
+/**
+ * @file connect.go
+ * @brief Este arquivo contém a função para estabelecer uma conexão com o banco de dados PostgreSQL.
+ */
+
 package postgres
 
 import (
@@ -10,10 +15,15 @@ import (
 	"gorm.io/gorm"
 )
 
-// Connect establishes a connection to the PostgreSQL database.
-//
-// It reads the environment variables from the .env file and constructs the connection string.
-// The function returns a *gorm.DB instance and an error.
+/**
+ * @brief Estabelece uma conexão com o banco de dados PostgreSQL.
+ *
+ * Esta função lê as variáveis de ambiente do arquivo .env e constrói a string de conexão.
+ * A função retorna uma instância de *gorm.DB e um erro, se houver.
+ *
+ * @return *gorm.DB Um ponteiro para a instância gorm.DB.
+ * @return error Um erro se a conexão não puder ser estabelecida.
+ */
 func Connect() (*gorm.DB, error) {
 	host := os.Getenv("POSTGRES_HOST")
 	port := os.Getenv("POSTGRES_EXTERNAL_PORT")

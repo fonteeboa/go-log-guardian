@@ -1,3 +1,8 @@
+/**
+ * @file functions.go
+ * @brief Funções para inserir logs em coleções MongoDB.
+ */
+
 package mongodb
 
 import (
@@ -8,11 +13,13 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-// InsertBaseLog inserts a base log into the specified MongoDB collection.
-//
-// Client is the MongoDB client used to connect to the database.
-// log is the base log to be inserted.
-// Returns an error if the insertion fails.
+/**
+ * @brief Insere um log base na coleção especificada do MongoDB.
+ *
+ * @param Client Cliente MongoDB usado para conectar ao banco de dados.
+ * @param log Log base a ser inserido.
+ * @return error Retorna um erro se a inserção falhar.
+ */
 func InsertBaseLog(Client *mongo.Client, log pkg.LogDetails) error {
 	collection := getCollection(Client, "baseLogs")
 
@@ -20,35 +27,39 @@ func InsertBaseLog(Client *mongo.Client, log pkg.LogDetails) error {
 	return err
 }
 
-// InsertFunctionLog inserts a function log into the "functionLogs" collection.
-//
-// Client is a MongoDB client.
-// log is the function log to be inserted.
-// Returns an error if the insertion fails.
+/**
+ * @brief Insere um log de função na coleção "functionLogs".
+ *
+ * @param Client Cliente MongoDB usado para conectar ao banco de dados.
+ * @param log Log de função a ser inserido.
+ * @return error Retorna um erro se a inserção falhar.
+ */
 func InsertFunctionLog(Client *mongo.Client, log pkg.LogFunction) error {
 	collection := getCollection(Client, "functionLogs")
 	_, err := collection.InsertOne(context.Background(), log)
 	return err
 }
 
-// InsertDatabaseLog inserts a database log into the specified collection.
-//
-// It takes a mongo.Client object and a pkg.LogDatabase object as parameters.
-// It returns an error if the insertion fails.
+/**
+ * @brief Insere um log de banco de dados na coleção especificada.
+ *
+ * @param Client Cliente MongoDB usado para conectar ao banco de dados.
+ * @param log Log de banco de dados a ser inserido.
+ * @return error Retorna um erro se a inserção falhar.
+ */
 func InsertDatabaseLog(Client *mongo.Client, log pkg.LogDatabase) error {
 	collection := getCollection(Client, "databaseLogs")
 	_, err := collection.InsertOne(context.Background(), log)
 	return err
 }
 
-// InsertRequestLog inserts a request log into the "requestLogs" collection in the MongoDB database.
-//
-// Parameters:
-// - Client: A pointer to a mongo.Client object representing the MongoDB client.
-// - log: The request log to be inserted in the collection.
-//
-// Returns:
-// - error: An error, if any, encountered during the insertion process.
+/**
+ * @brief Insere um log de requisição na coleção "requestLogs" no banco de dados MongoDB.
+ *
+ * @param Client Ponteiro para um objeto mongo.Client representando o cliente MongoDB.
+ * @param log Log de requisição a ser inserido na coleção.
+ * @return error Retorna um erro se a inserção falhar.
+ */
 func InsertRequestLog(Client *mongo.Client, log pkg.LogRequest) error {
 	collection := getCollection(Client, "requestLogs")
 	_, err := collection.InsertOne(context.Background(), log)

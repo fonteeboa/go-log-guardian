@@ -1,3 +1,8 @@
+/**
+ * @file generalFunctions.go
+ * @brief Este arquivo contém funções gerais utilizadas no serviço.
+ */
+
 package services
 
 import (
@@ -7,21 +12,25 @@ import (
 	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
-// checkEnvironment checks the environment and returns a boolean value.
-//
-// This function does not take any parameters.
-// It returns a boolean value indicating whether the "DATABASE_TYPE" environment variable is set or not.
+/**
+ * @brief Verifica o ambiente e retorna um valor booleano.
+ *
+ * Esta função verifica se a variável de ambiente "DATABASE_TYPE" está definida.
+ *
+ * @return bool Retorna verdadeiro se a variável de ambiente "DATABASE_TYPE" estiver definida, caso contrário, retorna falso.
+ */
 func CheckEnvironment() bool {
 	insertDB := os.Getenv("DATABASE_TYPE")
 	return insertDB != ""
 }
 
-// debug prints the provided error message if the priority is set to LOG_DEBUG.
-//
-// Parameters:
-//   - priority: the priority level of the error message (domain.Priority)
-//   - genericErrMsg: the generic error message (string)
-//   - errMsg: the specific error message (string)
+/**
+ * @brief Imprime a mensagem de erro fornecida se a prioridade estiver definida como LOG_DEBUG.
+ *
+ * @param priority O nível de prioridade da mensagem de erro (domain.Priority).
+ * @param genericErrMsg A mensagem de erro genérica (string).
+ * @param errMsg A mensagem de erro específica (string).
+ */
 func Debug(priority domain.Priority, genericErrMsg string, errMsg string) {
 	if priority == domain.LOG_DEBUG {
 		fmt.Println(domain.PriorityToString[priority] + ": " + genericErrMsg + " " + errMsg)

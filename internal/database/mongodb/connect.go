@@ -1,3 +1,8 @@
+/**
+ * @file connect.go
+ * @brief Este arquivo contém funções para conectar ao banco de dados MongoDB e obter coleções.
+ */
+
 package mongodb
 
 import (
@@ -10,10 +15,11 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-// Connect establishes a connection to the MongoDB database.
-//
-// It takes no parameters.
-// It returns a pointer to a mongo.Client and an error.
+/**
+ * @brief Estabelece uma conexão com o banco de dados MongoDB.
+ *
+ * @return Um ponteiro para um mongo.Client e um erro, se houver.
+ */
 func Connect() (*mongo.Client, error) {
 	clientOptions := options.Client().ApplyURI(os.Getenv("MONGODB_URI"))
 
@@ -32,14 +38,13 @@ func Connect() (*mongo.Client, error) {
 	return client, nil
 }
 
-// getCollection returns a MongoDB collection based on the provided client and collection name.
-//
-// Parameters:
-// - client: A pointer to a mongo.Client instance.
-// - collectionName: The name of the collection.
-//
-// Returns:
-// - A pointer to a mongo.Collection instance.
+/**
+ * @brief Retorna uma coleção do MongoDB com base no cliente e no nome da coleção fornecidos.
+ *
+ * @param client Um ponteiro para uma instância de mongo.Client.
+ * @param collectionName O nome da coleção.
+ * @return Um ponteiro para uma instância de mongo.Collection.
+ */
 func getCollection(client *mongo.Client, collectionName string) *mongo.Collection {
 	dbName := migrate.GetDbName()
 	db := client.Database(dbName)

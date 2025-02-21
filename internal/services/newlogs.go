@@ -1,3 +1,8 @@
+/**
+ * @file newlogs.go
+ * @brief Este arquivo contém funções para criar novas instâncias de diferentes tipos de logs.
+ */
+
 package services
 
 import (
@@ -6,15 +11,15 @@ import (
 	"github.com/fonteeBoa/go-log-guardian/pkg/domain"
 )
 
-// NewLogDetails creates a new instance of the LogDetails struct.
-//
-// Parameters:
-// - priority: The priority of the log.
-// - genericErrMsg: The generic error message.
-// - errMsg: The specific error message.
-//
-// Return type:
-// - domain.LogDetails: The newly created LogDetails instance.
+/**
+ * @brief Cria uma nova instância da struct LogDetails.
+ *
+ * @param priority A prioridade do log.
+ * @param genericErrMsg A mensagem de erro genérica.
+ * @param errMsg A mensagem de erro específica.
+ *
+ * @return Retorna uma nova instância de domain.LogDetails.
+ */
 func NewLogDetails(priority domain.Priority, genericErrMsg string, errMsg string) domain.LogDetails {
 	return domain.LogDetails{
 		Priority:            priority,
@@ -25,16 +30,16 @@ func NewLogDetails(priority domain.Priority, genericErrMsg string, errMsg string
 	}
 }
 
-// NewFunctionLog creates a new function log with the given priority, function name, generic error message, and error message.
-//
-// Parameters:
-// - priority: the priority of the log
-// - functionName: the name of the function
-// - genericErrMsg: the generic error message
-// - errMsg: the specific error message
-//
-// Returns:
-// - a LogFunction struct representing the function log
+/**
+ * @brief Cria um novo log de função com a prioridade, nome da função, mensagem de erro genérica e mensagem de erro específica fornecidos.
+ *
+ * @param priority A prioridade do log.
+ * @param functionName O nome da função.
+ * @param genericErrMsg A mensagem de erro genérica.
+ * @param errMsg A mensagem de erro específica.
+ *
+ * @return Retorna uma struct domain.LogFunction representando o log da função.
+ */
 func NewFunctionLog(priority domain.Priority, functionName string, genericErrMsg string, errMsg string) domain.LogFunction {
 	return domain.LogFunction{
 		LogDetails: domain.LogDetails{
@@ -48,17 +53,17 @@ func NewFunctionLog(priority domain.Priority, functionName string, genericErrMsg
 	}
 }
 
-// NewDatabaseLog creates a new database log entry.
-//
-// Parameters:
-//   - priority: the priority of the log entry (domain.Priority).
-//   - tableName: the name of the table (string).
-//   - query: the query that was executed (string).
-//   - genericErrMsg: the generic error message (string).
-//   - errMsg: the specific error message (string).
-//
-// Returns:
-//   - domain.LogDatabase: the created database log entry.
+/**
+ * @brief Cria uma nova entrada de log de banco de dados.
+ *
+ * @param priority A prioridade da entrada de log (domain.Priority).
+ * @param tableName O nome da tabela (string).
+ * @param query A consulta que foi executada (string).
+ * @param genericErrMsg A mensagem de erro genérica (string).
+ * @param errMsg A mensagem de erro específica (string).
+ *
+ * @return Retorna uma nova instância de domain.LogDatabase.
+ */
 func NewDatabaseLog(priority domain.Priority, tableName string, query string, genericErrMsg string, errMsg string) domain.LogDatabase {
 	return domain.LogDatabase{
 		LogDetails: domain.LogDetails{
@@ -73,18 +78,19 @@ func NewDatabaseLog(priority domain.Priority, tableName string, query string, ge
 	}
 }
 
-// NewRequestLog creates a new request log with the given parameters.
-//
-// Parameters:
-// - priority: the priority of the log.
-// - method: the HTTP method of the request.
-// - statusCode: the status code of the response.
-// - path: the path of the request.
-// - responseSize: the size of the response in bytes.
-// - genericErrMsg: a generic error message.
-// - errMsg: a specific error message.
-//
-// Return type: domain.LogRequest
+/**
+ * @brief Cria um novo log de requisição com os parâmetros fornecidos.
+ *
+ * @param priority A prioridade do log.
+ * @param method O método HTTP da requisição.
+ * @param statusCode O código de status da resposta.
+ * @param path O caminho da requisição.
+ * @param responseSize O tamanho da resposta em bytes.
+ * @param genericErrMsg A mensagem de erro genérica.
+ * @param errMsg A mensagem de erro específica.
+ *
+ * @return Retorna uma nova instância de domain.LogRequest.
+ */
 func NewRequestLog(priority domain.Priority, method string, statusCode int, path string, responseSize int, genericErrMsg string, errMsg string) domain.LogRequest {
 	return domain.LogRequest{
 		LogDetails: domain.LogDetails{
